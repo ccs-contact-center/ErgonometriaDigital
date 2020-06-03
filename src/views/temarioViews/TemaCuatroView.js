@@ -30,28 +30,22 @@ class TemaCuatroView extends Component {
     return (
       <div className="animated fadeIn ">
         <CardHeader className="text-left">
-          <h3>El Ladrón de Problemas</h3>
+        <h3>Ergonometría Digítal</h3>
         </CardHeader>
         <CardBody className="">
           <Row>
             <Col xs="12">
               <h2 className="animated fadeInDown">
-                <b>¿Puedo Ayudar?</b>
+                <b>Visión</b>
               </h2>
             </Col>
             <Col xs="12" className="  animated fadeInDown">
-              <Row>
+              
+            </Col>
+          </Row>
+          <Row className="centrado-fila">
                 <Col xs="8">
-                  <Row>
-                    <Col xs="12">
-                      <p>
-                        {' '}
-                        Hasta este momento toda ha sido fácil ¿cierto?, pero es
-                        aquí donde se necesita un poco más de análisis.
-                      </p>
-                      <p>Existen dos caminos en este punto:</p>
-                    </Col>
-                  </Row>
+                  
                   <Row>
                     <Col xs="12" className="centrado-fila">
                       <Nav tabs className="text-center">
@@ -153,12 +147,8 @@ class TemaCuatroView extends Component {
                     className="img-fluid   animated fadeInUpBig delay-2s  "
                   />
                 </Col>
-                <Col xs="12">
-                  <p>Por lo tanto nuevamente realiza una división de esas problemas</p>
-                </Col>
+               
               </Row>
-            </Col>
-          </Row>
         </CardBody>
       </div>
     )
