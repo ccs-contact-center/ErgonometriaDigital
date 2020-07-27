@@ -1,36 +1,18 @@
 import React, { Component } from 'react'
-import {
-  CardBody,
-  CardHeader,
-  Col,
-  Row,
-  TabContent,
-  TabPane,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap'
-import classnames from 'classnames'
-import consejos01 from '../../assets/img/ImgLadron/cuatro.PNG'
+import { CardBody, CardHeader, Col, Row } from 'reactstrap'
+import cuatro from '../../assets/img/ImgErgonometria/cuatro.jpeg'
+import cuatro02 from '../../assets/img/ImgErgonometria/cuatro02.png'
 
 class TemaCuatroView extends Component {
   loading = () => (
     <div className="animated fadeIn pt-1 text-center">Cargando...</div>
   )
 
-  state = {
-    activeTab: '0',
-  }
-
-  toggle = (tab) => {
-    if (this.state.activeTab !== tab) this.setState({ activeTab: tab })
-  }
-
   render() {
     return (
       <div className="animated fadeIn ">
         <CardHeader className="text-left">
-        <h3>Ergonometría Digítal</h3>
+          <h3>Ergonometría Digítal</h3>
         </CardHeader>
         <CardBody className="">
           <Row>
@@ -39,116 +21,67 @@ class TemaCuatroView extends Component {
                 <b>Visión</b>
               </h2>
             </Col>
-            <Col xs="12" className="  animated fadeInDown">
-              
+          </Row>
+          <Row className="centrado-fila">
+            <Col xs="8">
+              <Row className="centrado-fila">
+                <Col xs="6">
+                  <p>
+                    Proteje tus ojos ajustando la luz de la pantalla de acuerdo
+                    a la luz natural o bien usa lentes para computadora.
+                  </p>
+                </Col>
+                <Col xs="6">
+                  <p>
+                    Para descansar la vista : <br />
+                    Observa cada 20 minutos un objeto a una distancia de 6
+                    metros por 20 segundos.
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs="4" className="centrado-fila">
+              <img
+                src={cuatro}
+                style={{ width: 350 }}
+                alt="cuatro"
+                className="img-fluid bordeImagen  animated fadeInUpBig delay-2s  "
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12">
+              <h2 className="animated fadeInDown">
+                <b>Audición</b>
+              </h2>
             </Col>
           </Row>
           <Row className="centrado-fila">
-                <Col xs="8">
-                  
-                  <Row>
-                    <Col xs="12" className="centrado-fila">
-                      <Nav tabs className="text-center">
-                        <NavItem className="d-flex justify-content-center">
-                          <NavLink
-                            className={
-                              (classnames({
-                                active: this.state.activeTab === '1',
-                              }),
-                              'bg-fondo-btn btn btnAct text-danger ')
-                            }
-                            onClick={() => {
-                              this.toggle('1')
-                            }}
-                          >
-                            <div className=" text-center ">
-                              <b>1</b>
-                            </div>
-                          </NavLink>
-                        </NavItem>
-
-                        <NavItem>
-                          <NavLink
-                            className={
-                              (classnames({
-                                active: this.state.activeTab === '2',
-                              }),
-                              'bg-fondo-btn btn btnAct text-danger ')
-                            }
-                            onClick={() => {
-                              this.toggle('2')
-                            }}
-                          >
-                            <div color="primary" className="dark text-center">
-                              <b>2</b>
-                            </div>
-                          </NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink
-                            className={
-                              (classnames({
-                                active: this.state.activeTab === '3',
-                              }),
-                              'bg-fondo-btn btn btnAct text-danger ')
-                            }
-                            onClick={() => {
-                              this.toggle('3')
-                            }}
-                          >
-                            <div color="primary" className="dark text-center">
-                              <b>2.1</b>
-                            </div>
-                          </NavLink>
-                        </NavItem>
-                      </Nav>
-                    </Col>
-                    <Col xs="12">
-                      <TabContent activeTab={this.state.activeTab}>
-                        <TabPane tabId="0"></TabPane>
-                        <TabPane tabId="1">
-                          <Row>
-                            <Col sm="xs">
-                              <p className="text-danger">
-                                No soy responsable de ayudar ( no es mi rol, que
-                                lo ayude alguien más).
-                              </p>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="2">
-                          <Row>
-                            <Col sm="12">
-                              <p className="text-warning">
-                                Es mi responsabilidad ayudar ( es mi rol).
-                              </p>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="3">
-                          <Row>
-                            <Col sm="12">
-                              <p className="text-warning">
-                                Soy corresponsable ( no es mi rol, pero se como
-                                y puedo hacerlo).{' '}
-                              </p>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                      </TabContent>
-                    </Col>
-                  </Row>
+            <Col xs="4" className="centrado-fila">
+              <img
+                src={cuatro02}
+                style={{ width: 350 }}
+                alt="cuatro02"
+                className="img-fluid bordeImagen  animated fadeInUpBig delay-2s  "
+              />
+            </Col>
+            <Col xs="8">
+              <Row className="centrado-fila">
+                <Col xs="6">
+                  <p>
+                    Usa de forma inteligente los audifonos o bocinas a un máximo
+                    del 60% de su capacidad.
+                  </p>
                 </Col>
-                <Col xs="4" className="centrado-fila">
-                  <img
-                    src={consejos01}
-                    style={{ width: 350 }}
-                    alt="escucha-activa.jpg"
-                    className="img-fluid   animated fadeInUpBig delay-2s  "
-                  />
+                <Col xs="6">
+                  <p>
+                    De esta forma podras disfrutar de tu música sin aislarte y
+                    sobre todo sin dañar tu audición.
+                  </p>
                 </Col>
-               
               </Row>
+            </Col>
+          </Row>
         </CardBody>
       </div>
     )
