@@ -10,7 +10,7 @@ import {
   Label,
   Input,
 } from 'reactstrap'
-import AuthService from "../../services/AuthService";
+import AuthService from '../../services/AuthService'
 import API_CCS from '../../services/API_CCS'
 const API = new API_CCS()
 
@@ -21,49 +21,41 @@ class Actividad1View extends Component {
 
   constructor(props) {
     super(props)
-    this.Auth = new AuthService();
-    this.state = { 
-    radio1: "",
-    radio2: "",
-    radio3: "",
-    radio4: "",
-    radio5: "",
-    radio6: "",
-    radio7: "",
-    radio8: "",
-    radio9: "",
-    radio10: "",
-    id_ccs: this.Auth.getProfile().id_ccs,
-    form: "ErgonometriDigital",
-
-  
-  }
-
-    
+    this.Auth = new AuthService()
+    this.state = {
+      radio1: '',
+      radio2: '',
+      radio3: '',
+      radio4: '',
+      radio5: '',
+      radio6: '',
+      radio7: '',
+      radio8: '',
+      radio9: '',
+      radio10: '',
+      id_ccs: this.Auth.getProfile().id_ccs,
+      form: 'ErgonometriDigital',
+    }
   }
 
   onChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
-    });
+    })
   }
 
   async onSave(e) {
     try {
-      var respuesta = await API.guardaActividad(this.state);
-      alert("Se guardo la actividad, con id: " + respuesta[0].id);
+      var respuesta = await API.guardaActividad(this.state)
+      alert('Se guardo la actividad, con id: ' + respuesta[0].id)
     } catch (err) {
-      console.log("loggea si hay un error");
+      console.log('loggea si hay un error')
     }
   }
-
- 
-
 
   render() {
     return (
       <div className="animated fadeIn">
-       
         <Row>
           <Col>
             <CardHeader className="">
@@ -84,15 +76,30 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio1" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio1"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(a) 60%.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio1"  value="b" onChange={this.onChange.bind(this)}/>
+                        <Input
+                          type="radio"
+                          name="radio1"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 43%. </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio1" value="c" onChange={this.onChange.bind(this)}/>
+                        <Input
+                          type="radio"
+                          name="radio1"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(c) 99%.</Label>
                       </FormGroup>
                     </Col>
@@ -113,18 +120,33 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio2" value="a"  onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio2"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (a) Solo aplica en casos de que te lloren los ojos o
                           duela la cabeza y es por 10 minutos.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio2" value="b"  onChange={this.onChange.bind(this)}/>
+                        <Input
+                          type="radio"
+                          name="radio2"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 40 minutos.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio2" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio2"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (c) Cada 20 minutos posando la vista en un objeto a
                           distancia.
@@ -148,17 +170,32 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (a) No importa siempre y cuando no sea menor a 30 cm.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 130 cm es lo recomendable. </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (c) Se recomienda una distancia no menor a 160 cm.
                         </Label>
@@ -182,21 +219,36 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio4" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio4"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (a) Por que puede provocar alteraciones del ritmo
                           circadiano o del sueño.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (b) Porque el ruido de los aparatos o las ondas
                           electromagnéticas no son buenas para el cerebro.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (c) Porque la luz de los dispositivos le da la señal
                           al cerebro de que todavía debe estar activo.
@@ -221,15 +273,30 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(a) 40 centímetros.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="b"  onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 35 centímetros.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(c) 30 centímetros.</Label>
                       </FormGroup>
                     </Col>
@@ -252,15 +319,30 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(a) 45 minutos.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 55 minutos.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(c) 35 minutos.</Label>
                       </FormGroup>
                     </Col>
@@ -281,15 +363,30 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="a"  onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(a) 45 cm.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 35 cm.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(c) 55 cm.</Label>
                       </FormGroup>
                     </Col>
@@ -310,15 +407,30 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="a"  onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(a) 3 metros por 10 segundos.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) 6 metros por 20 segundos.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio3"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(c) 9 metros por 40 segundos.</Label>
                       </FormGroup>
                     </Col>
@@ -339,18 +451,33 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio9" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio9"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (a) Deformaciones del cuello o columna, problemas de
                           articulaciones y tendones.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio9" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio9"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>(b) Ceguera.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio9" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio9"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (c) Dolores de cabeza, fatiga y bajo desempeño social.
                         </Label>
@@ -373,14 +500,24 @@ class Actividad1View extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio10" value="a" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio10"
+                          value="a"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (a) Hacer uso de ellos mientras estamos en movimiento
                           propicia a una pérdida de noción del tiempo.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio10" value="b" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio10"
+                          value="b"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (b) Para evitar posibles accidentes a nuestra persona
                           o a quienes nos rodean por estar completamente
@@ -388,7 +525,12 @@ class Actividad1View extends Component {
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio10" value="c" onChange={this.onChange.bind(this)} />
+                        <Input
+                          type="radio"
+                          name="radio10"
+                          value="c"
+                          onChange={this.onChange.bind(this)}
+                        />
                         <Label check>
                           (c) Por que nos dañamos la vista o el oído.
                         </Label>
@@ -403,7 +545,7 @@ class Actividad1View extends Component {
                   <Col className="centrado-fila">
                     <Button
                       color="primary"
-                      onClick={() => this.setState({ show: true })}
+                      onClick={this.onSave.bind(this)}
                     >
                       Enviar
                     </Button>
