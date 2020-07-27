@@ -12,23 +12,26 @@ export default {
     },
 
     {
-      name: 'DETECCIÓN DE PROBLEMAS ',
+      name: '¿QUÉ ES LA ERGONOMETRIA? ',
       icon: 'icon-tag',
       
     },
 
     {
-      name: 'PRIORIZANDO PROBLEMAS  ',
+      name: '¿POR QUE DEBEMOS CONOCERLA? ',
       icon: 'icon-tag',
      
     },
     {
-      name: 'BUSCANDO UNA SOLUCIÓN ',
+      name: 'RECOMENDACIONES',
       icon: 'icon-tag',
      
     },
-    
-    
+    {
+      name: 'CONCLUSIÓN',
+      icon: 'icon-tag',
+     
+    },
     {
       name: 'EVALUACIÓN ',
       icon: 'icon-puzzle',
