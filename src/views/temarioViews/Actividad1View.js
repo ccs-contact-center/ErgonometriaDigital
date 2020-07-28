@@ -552,7 +552,7 @@ class Actividad1View extends Component {
                   </Col>
                 </FormGroup>
               </Form>
-              <p>{JSON.stringify(this.state)}</p>
+              {/* <p>{JSON.stringify(this.state)}</p> */}
             </CardBody>
           </Col>
         </Row>
