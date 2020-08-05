@@ -34,7 +34,7 @@ class Actividad1View extends Component {
       radio9: '',
       radio10: '',
       id_ccs: this.Auth.getProfile().id_ccs,
-      form: 'ErgonometriDigital',
+      form: 'ErgonometriDigital-1',
     }
   }
 
