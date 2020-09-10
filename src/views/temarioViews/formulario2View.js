@@ -10,8 +10,7 @@ import {
   Label,
   Input,
 } from 'reactstrap'
-
-import AuthService from '../../services/AuthService'
+import swal from 'sweetalert'
 import API_CCS from '../../services/API_CCS'
 const API = new API_CCS()
 
@@ -22,7 +21,6 @@ class Encuesta extends Component {
 
   constructor(props) {
     super(props)
-    this.Auth = new AuthService()
     this.state = {
       pregunta1: '',
       pregunta2: '',
@@ -32,7 +30,6 @@ class Encuesta extends Component {
       pregunta6: '',
       acept: '',
       message: '',
-      id_ccs: this.Auth.getProfile().id_ccs,
     }
   }
 
@@ -49,16 +46,86 @@ class Encuesta extends Component {
   }
 
   async onSave(e) {
-    try {
-      var respuesta = await API.guardaEncuesta(this.state)
-      alert('Se guardo la encuesta número ' + respuesta[0].id)
-    } catch (err) {
-      console.log('loggea si hay un error')
-    }
+    /*
+    Aqui hay varios puntos... primero, debes de cachar la respuesta de tu llamada a la api en algun lado, podria quedar asi:
+
+
+     var respuesta = API.insertarEncuesta(this.state)
+          .then((res)=>{
+            return res[0].id
+          })
+          .then((res)=>{
+            alert("Se guardo la encuesta número " + res[0].id) 
+          })
+          .error((err)=>{
+            console.log("loggea si hay un error")
+          })
+
+
+    Pero hay otra manera mas facil y es haciendo async la función... Quedaría asi:
     
+
+    (Linea 48) async onSave(e){ (... todo lo demas)
+
+    
+    */
+   try {
+    var respuesta = await API.insertarEncuesta(this.state)
+    swal({
+      title: "Status Encusta.",
+      text: "Se guardo encuesta, con id: " + respuesta[0].id,
+      icon: "success",
+      dangerMode: true,
+      button: {
+        text: "Aceptar",
+        value: true,
+        visible: true,
+        className: "btn btn-primary",
+        reset: true,
+      },
+    });
+  } catch (err) {
+    swal({
+      title: "Status Encusta",
+      text: "No se guardo encusta, Intenta de nuevo. ",
+      icon: "error",
+      dangerMode: true,
+      button: {
+        text: "Cerrar",
+        value: true,
+        visible: true,
+        className: "btn btn-primary ",
+      },
+    });
   }
 
- 
+    // if (!this.validate()) {
+     
+    // } else {
+    // }
+    //Aqui deberias hacer algo si no está validado el form
+    //
+
+    // if (this.validate()) {
+   
+    //   this.setState({
+    //     message: 'Guardado.....',
+    //   })
+   
+    // }
+   
+  }
+
+
+  // validate(e) {
+  //   if (this.state.acept !== false) {
+  //     this.setState({
+  //       message: 'Dé en  aceptar',
+      
+  //     })
+  //   }
+    
+  // }
 
 
   render() {
@@ -461,4 +528,5 @@ class Encuesta extends Component {
     )
   }
 }
-export default Encuesta
+export default  Encuesta
+
